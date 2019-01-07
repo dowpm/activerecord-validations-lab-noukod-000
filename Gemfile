@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
+  gem 'tux'
 end
 
 group :development do
