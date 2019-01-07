@@ -1,3 +1,11 @@
+class MyValidator < ActiveModel::Validator
+  def validate(record)
+    unless ["Won't Believe", "Secret", "Top [number]", "Guess"].any? { |t| t == record.title }
+      record.errors[:title] << 'the title does not contain the words'
+    end
+  end
+end
+
 class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, length: {minimum: 250}
